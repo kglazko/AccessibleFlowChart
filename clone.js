@@ -228,7 +228,7 @@ Sprite.prototype = {
     self.sound.once('end', function() {
       if(parent === 'room1') {
         self.sound.play('high');
-        self.sound.pos(-5.0 ,0,-1.0, id);
+        self.sound.pos(-5.0 ,0,-2.0, id);
         self.sound.once('end', function(){
           self.sound.play('high');
           self.sound.pos(-3.3 ,0,-1.0, id);
@@ -240,7 +240,7 @@ Sprite.prototype = {
               self.sound.pos(3.6 ,0,-1.0, id);
               self.sound.once('end', function(){
                 self.sound.play('high');
-                self.sound.pos(5.0 ,0,-1.0, id);
+                self.sound.pos(5.0 ,0,-2.0, id);
               });
             });
           });
