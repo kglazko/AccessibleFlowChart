@@ -152,7 +152,7 @@ Sprite.prototype = {
     // Play the sprite sound and capture the ID.
     if (key.includes('room1')){
       var id = self.sound.play(sprite);
-      self.sound.stereo(-1.0 , 0);
+      self.sound.stereo(-1.0 );
     }
 
     else if (key.includes('room2')){
