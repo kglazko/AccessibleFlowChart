@@ -228,19 +228,19 @@ Sprite.prototype = {
     self.sound.once('end', function() {
       if(parent === 'room1') {
         self.sound.play('high');
-        self.sound.pos(-1.0 ,0,-1.0, id);
+        self.sound.pos(-5.0 ,0,-1.0, id);
         self.sound.once('end', function(){
           self.sound.play('high');
-          self.sound.pos(-0.3 ,0,-1.0, id);
+          self.sound.pos(-3.3 ,0,-1.0, id);
           self.sound.once('end', function(){
             self.sound.play('high');
-            self.sound.pos(0.3 ,0,-1.0, id);
+            self.sound.pos(1.3 ,0,-1.0, id);
             self.sound.once('end', function(){
               self.sound.play('high');
-              self.sound.pos(0.6 ,0,-1.0, id);
+              self.sound.pos(3.6 ,0,-1.0, id);
               self.sound.once('end', function(){
                 self.sound.play('high');
-                self.sound.pos(1.0 ,0,-1.0, id);
+                self.sound.pos(5.0 ,0,-1.0, id);
               });
             });
           });
