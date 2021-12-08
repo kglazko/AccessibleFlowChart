@@ -251,16 +251,22 @@ Sprite.prototype = {
       }
       else if (parent === 'room2') {
         self.sound.play('high');
+        self.sound.stereo(-1.0);
         self.sound.once('end', function(){
           self.sound.play('high');
+          self.sound.stereo(-0.5);
           self.sound.once('end', function(){
             self.sound.play('high');
+            self.sound.stereo(0.0);
             self.sound.once('end', function(){
               self.sound.play('high');
+              self.sound.stereo(0.3);
               self.sound.once('end', function(){
                 self.sound.play('high');
+                self.sound.stereo(0.6);
                 self.sound.once('end', function(){
                   self.sound.play('high');
+                  self.sound.stereo(1.0);
                 });
               });
             });
@@ -270,13 +276,16 @@ Sprite.prototype = {
 
       else if (parent === 'room3') {
         self.sound.play('high');
+        self.sound.stereo(-1.0);
         self.sound.once('end', function(){
           self.sound.play('high');
+          self.sound.stereo(1.0);
         });
       }
 
       else if (parent === 'room4') {
         self.sound.play('high');
+        self.sound.stereo(0.0);
       }
 
       else if (parent === 'house1') {
@@ -338,12 +347,6 @@ Sprite.prototype = {
         });
       }
     });
-  },
-
-  recursive_play: function(key) {
-    if(key === "house1") {
-      self.play2
-    }
   },
 
   /**
