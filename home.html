@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Howler.js Tests</title>
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+  <div id="container">
+    <button class="button" id="index">HOUSE 1 SPATIAL/HOUSE 2 NON-SPATIAL</button>
+    <button class="button" id="html5">HOUSE 2 SPATIAL/HOUSE 1 NON-SPATIAL</button>
+    <button class="button" id="spatial">RUN SPATIAL TESTS</button>
+  </div>
+
+  <script>
+    document.getElementById('index').onclick = function() {
+      window.location = 'index.html';
+    };
+
+    document.getElementById('html5').onclick = function() {
+      window.location = 'core.html5audio.html';
+    };
+
+    document.getElementById('spatial').onclick = function() {
+      window.location = 'spatial.html';
+    };
+  </script>
+</body>
+</html>
