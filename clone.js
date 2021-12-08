@@ -94,7 +94,7 @@ var Sprite = function(options) {
       rightTracker -=1;
       console.log(window[selected_node + 'Array'][0]);
       var id = self.play(window[selected_node + 'Array'][0]);
-      self.sound.pos(-100 ,0,-0.5);
+      //self.sound.pos(-100 ,0,-0.5);
       selected_node = window[selected_node + 'Array'][0];
       break;
 
@@ -103,7 +103,7 @@ var Sprite = function(options) {
       rightTracker += 1;
       leftTracker -= 1;
       var id = self.play(window[selected_node + 'Array'][1]);
-      self.sound.pos(100,0,-0.5, id);
+      //self.sound.pos(100,0,-0.5, id);
       selected_node = window[selected_node + 'Array'][1];
       break;
 
@@ -228,7 +228,6 @@ Sprite.prototype = {
     self.sound.once('end', function() {
       if(parent === 'room1') {
         self.sound.play('high');
-        self.sound.pos(-1.0 ,0,-0.5, id);
         self.sound.once('end', function(){
           self.sound.play('high');
           self.sound.once('end', function(){
@@ -243,7 +242,6 @@ Sprite.prototype = {
         });
       }
       else if (parent === 'room2') {
-        self.sound.pos(-0.5 ,0,-0.5, id);
         self.sound.play('high');
         self.sound.once('end', function(){
           self.sound.play('high');
@@ -263,7 +261,6 @@ Sprite.prototype = {
       }
 
       else if (parent === 'room3') {
-        self.sound.pos(0 ,0,-0.5, id);
         self.sound.play('high');
         self.sound.once('end', function(){
           self.sound.play('high');
@@ -271,7 +268,6 @@ Sprite.prototype = {
       }
 
       else if (parent === 'room4') {
-        self.sound.pos(1.0 ,0,-0.5, id);
         self.sound.play('high');
       }
 
