@@ -150,8 +150,32 @@ Sprite.prototype = {
     var sprite = self._spriteMap[key];
 
     // Play the sprite sound and capture the ID.
-    var id = self.sound.play(sprite);
-    self.sound.pos(-1.0 * rightTracker,0,-0.5, id);
+    if (key.includes('room1')){
+      var id = self.sound.play(sprite);
+      self.sound.pos(-1.0 ,0,0, id);
+    }
+
+    else if (key.includes('room2')){
+      var id = self.sound.play(sprite);
+      self.sound.pos(-0.5 ,0,0, id);
+    }
+
+    else if (key.includes('room3')){
+      var id = self.sound.play(sprite);
+      self.sound.pos(0 ,0,0, id);
+    }
+
+    else if (key.includes('room3')){
+      var id = self.sound.play(sprite);
+      self.sound.pos(1.0 ,0,0, id);
+    }
+
+    else {
+      var id = self.sound.play(sprite);
+    }
+
+
+    
 
     self.sound.once('end', function() {
     if(key.includes('room1')){
