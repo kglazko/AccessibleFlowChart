@@ -167,7 +167,7 @@ Sprite.prototype = {
       self.sound.stereo(0.5);
     }
 
-    else if (key.includes('room3')){
+    else if (key.includes('room4')){
       var id = self.sound.play(sprite);
       //self.sound.pos(1.0 ,0,-1.0, id);
       self.sound.stereo(1.0);
