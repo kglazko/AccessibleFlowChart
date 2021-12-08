@@ -157,17 +157,20 @@ Sprite.prototype = {
 
     else if (key.includes('room2')){
       var id = self.sound.play(sprite);
-      self.sound.pos(-0.5 ,0,-1.0, id);
+      //self.sound.pos(-0.5 ,0,-1.0, id);
+      self.sound.stereo(-0.5);
     }
 
     else if (key.includes('room3')){
       var id = self.sound.play(sprite);
-      self.sound.pos(0.5 ,0,-1.0, id);
+      //self.sound.pos(0.5 ,0,-1.0, id);
+      self.sound.stereo(0.5);
     }
 
     else if (key.includes('room3')){
       var id = self.sound.play(sprite);
-      self.sound.pos(1.0 ,0,-1.0, id);
+      //self.sound.pos(1.0 ,0,-1.0, id);
+      self.sound.stereo(1.0);
     }
 
     else {
