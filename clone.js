@@ -173,8 +173,7 @@ Sprite.prototype = {
       self.sound.stereo(1.0);
     }
 
-    else {
-      if (key.includes('chair1')){
+      else if (key.includes('chair1')){
         var id = self.sound.play(sprite);
         self.sound.stereo(-1.0);
       }
@@ -203,7 +202,6 @@ Sprite.prototype = {
         var id = self.sound.play(sprite);
         self.sound.stereo(0.0);
       }
-    }
   }
 
 
