@@ -178,32 +178,26 @@ Sprite.prototype = {
         case key.includes("chair1"):
         var id = self.sound.play(sprite);
         self.sound.stereo(-1.0);
-        break;
 
         case key.includes("fan1"):
         var id = self.sound.play(sprite);
         self.sound.stereo(-0.5);
-        break;
 
         case key.includes("cabinet"):
         var id = self.sound.play(sprite);
         self.sound.stereo(0.0);
-        break;
 
         case key.includes("bed1"):
         var id = self.sound.play(sprite);
         self.sound.stereo(0.5);
-        break;
 
         case key.includes("bed2"):
         var id = self.sound.play(sprite);
         self.sound.stereo(1.0);
-        break;
 
         case key.includes("house1"):
         var id = self.sound.play(sprite);
         self.sound.stereo(0.0);
-        break;
       }
 
 
