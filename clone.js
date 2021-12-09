@@ -12,7 +12,7 @@
 var house1Array = ['house1', 'house2', 'house1', 'room1'];
 var house2Array = ['house1', 'house3', 'house2', 'room21'];
 
-var room1Array = ['room1', 'room2', 'house1', 'cabinet1'];
+var room1Array = ['room1', 'room2', 'house1', 'chair1'];
 var cabinet1Array = ['fan1', 'bed1', 'room1', 'room1'];
 var fan1Array = ['chair1', 'cabinet1', 'room1', 'room1'];
 var chair1Array = ['room1', 'fan1', 'room1', 'room1'];
