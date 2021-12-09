@@ -183,7 +183,7 @@ Sprite.prototype = {
         self.sound.stereo(-0.5);
       }
 
-      else if (key.includes('cabinet')){
+      else if (key.includes('cabinet1')){
         var id = self.sound.play(sprite);
         self.sound.stereo(0.0);
       }
@@ -198,6 +198,46 @@ Sprite.prototype = {
         self.sound.stereo(1.0);
       }
 
+      else if (key.includes('chair2')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(-1.0);
+      }
+
+      else if (key.includes('chair3')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(-0.6);
+      }
+
+      else if (key.includes('chair4')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(-0.3);
+      }
+
+      else if (key.includes('chair5')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(0.3);
+      }
+
+      else if (key.includes('table1')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(0.6);
+      }
+
+      else if (key.includes('fan2')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(1.0);
+      }
+
+      else if (key.includes('tree1')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(-1.0);
+      }
+
+      else if (key.includes('tree2')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(1.0);
+      }
+
       else {
         var id = self.sound.play(sprite);
         self.sound.stereo(0.0);
@@ -206,24 +246,24 @@ Sprite.prototype = {
 
     self.sound.once('end', function() {
     if(key.includes('room1')){
-      self.play2('medium', key);
+      self.play2('medium', key, -1.0);
     }
 
     else if(key.includes('room2'))
     {
-      self.play2('medium', key);
+      self.play2('medium', key, -0.5);
     }
 
     else if(key.includes('room3')) {
-      self.play2('medium', key);
+      self.play2('medium', key, 0.5);
     }
 
     else if(key.includes('room4')) {
-      self.play2('medium', key);
+      self.play2('medium', key, 1.0);
     }
 
     else if (key.includes('house1')) {
-      self.play2('low', key);
+      self.play2('low', key, 0.0);
     }
     else {
       self.play2('high');
@@ -248,10 +288,11 @@ Sprite.prototype = {
     }, id);
   },
 
-  play2: function(key, parent) {
+  play2: function(key, parent, stereo) {
     self = this;
     var sprite = self._spriteMap[key];
     var id = self.sound.play(sprite);
+    self.sound.stereo(stereo);
     self.sound.once('end', function() {
       if(parent === 'room1') {
         self.sound.play('high');
