@@ -202,9 +202,6 @@ Sprite.prototype = {
         var id = self.sound.play(sprite);
         self.sound.stereo(0.0);
       }
-  }
-
-
     
 
     self.sound.once('end', function() {
