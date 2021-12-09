@@ -174,34 +174,37 @@ Sprite.prototype = {
     }
 
     else {
-      switch(key){
-        case key.includes("chair1"):
+      if (key.includes('chair1')){
         var id = self.sound.play(sprite);
         self.sound.stereo(-1.0);
+      }
 
-        case key.includes("fan1"):
+      else if (key.includes('fan1')){
         var id = self.sound.play(sprite);
         self.sound.stereo(-0.5);
+      }
 
-        case key.includes("cabinet"):
-        var id = self.sound.play(sprite);
-        self.sound.stereo(0.0);
-
-        case key.includes("bed1"):
-        var id = self.sound.play(sprite);
-        self.sound.stereo(0.5);
-
-        case key.includes("bed2"):
-        var id = self.sound.play(sprite);
-        self.sound.stereo(1.0);
-
-        case key.includes("house1"):
+      else if (key.includes('cabinet')){
         var id = self.sound.play(sprite);
         self.sound.stereo(0.0);
       }
 
+      else if (key.includes('bed1')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(0.5);
+      }
 
+      else if (key.includes('bed2')){
+        var id = self.sound.play(sprite);
+        self.sound.stereo(1.0);
+      }
+
+      else {
+        var id = self.sound.play(sprite);
+        self.sound.stereo(0.0);
+      }
     }
+  }
 
 
     
