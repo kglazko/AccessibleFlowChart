@@ -91,7 +91,7 @@ var Sprite = function(options) {
       rightTracker -=1;
       console.log(window[selected_node + 'Array'][0]);
       if (window[selected_node + 'Array'][0] === "clap") {
-        var id = self.play(window[selected_node + 'Array'][0]);
+        var id = self.sound.play("clap");
       }
       else {var id = self.play(window[selected_node + 'Array'][0]);
       selected_node = window[selected_node + 'Array'][0];
@@ -103,7 +103,7 @@ var Sprite = function(options) {
       rightTracker += 1;
       leftTracker -= 1;
       if (window[selected_node + 'Array'][1] === "clap") {
-        var id = self.play(window[selected_node + 'Array'][1]);
+        var id = self.sound.play("clap");
       }
       else {var id = self.play(window[selected_node + 'Array'][1]);
       selected_node = window[selected_node + 'Array'][1];
@@ -113,8 +113,7 @@ var Sprite = function(options) {
     case "ArrowUp":
       // Up pressed
       if (window[selected_node + 'Array'][2] === "clap") {
-        var id = self.play(window[selected_node + 'Array'][2]);
-      }
+        var id = self.sound.play("clap");      }
       else {var id = self.play(window[selected_node + 'Array'][2]);
       selected_node = window[selected_node + 'Array'][2];
       }
@@ -122,7 +121,7 @@ var Sprite = function(options) {
     case "ArrowDown":
       // Down pressed
       if (window[selected_node + 'Array'][3] === "clap") {
-        var id = self.play(window[selected_node + 'Array'][3]);
+        var id = self.sound.play("clap");
       }
       else {var id = self.play(window[selected_node + 'Array'][3]);
       selected_node = window[selected_node + 'Array'][3];
