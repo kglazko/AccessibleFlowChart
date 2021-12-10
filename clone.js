@@ -9,8 +9,7 @@
  */
 
 // Cache references to DOM elements.
-var house1Array = ['house1', 'house2', 'house1', 'room1'];
-var house2Array = ['house1', 'house3', 'house2', 'room21'];
+var house1Array = ['house1', 'house1', 'house1', 'room1'];
 
 var room1Array = ['room1', 'room2', 'house1', 'chair1'];
 var cabinet1Array = ['fan1', 'bed1', 'room1', 'room1'];
@@ -43,13 +42,6 @@ var r1_f = 5;
 var r2_f = 6;
 var r3_f = 2;
 var r4_f = 1;
-
-var h2_rooms = 5;
-var r21_f = 2;
-var r22_f = 6;
-var r23_f = 2;
-var r24_f = 3;
-var r25_f = 1;
 
 var elms = ['waveform', 'sprite0', 'sprite1', 'sprite2', 'sprite3', 'sprite4', 'sprite5'];
 elms.forEach(function(elm) {
@@ -85,7 +77,7 @@ var Sprite = function(options) {
 
   window.addEventListener("keydown", function(event) {
       event.preventDefault();
-      self.sound.stop();
+      self.sound.unload();
       const keyDown = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
     switch (keyDown) { // change to event.key to key to use the above variable
       case "ArrowLeft":
