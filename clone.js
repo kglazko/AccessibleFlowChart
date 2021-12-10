@@ -9,7 +9,7 @@
  */
 
 // Cache references to DOM elements.
-var house1Array = ['clap', 'clap', 'clap', 'room1'];
+var house1Array = ['house1', 'house1', 'house1', 'room1'];
 
 var room1Array = ['clap', 'room2', 'house1', 'chair1'];
 var cabinet1Array = ['fan1', 'bed1', 'room1', 'clap'];
