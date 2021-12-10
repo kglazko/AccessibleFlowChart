@@ -14,10 +14,10 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
-  background: #a30101;
-  background: -moz-linear-gradient(-45deg, #a30101 0%, #fbca05 100%);
-  background: -webkit-linear-gradient(-45deg, #a30101 0%, #fbca05 100%);
-  background: linear-gradient(135deg, #a30101 0%, #fbca05 100%);
+  background: #000;
+    background: -moz-linear-gradient(-45deg, #282828 0%, #080808 100%);
+  background: -webkit-linear-gradient(-45deg, #282828 0%, #080808 100%);
+  background: linear-gradient(135deg, #282828 0%, #080808 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#a30101', endColorstr='#fbca05', GradientType=1);
   font-family: "Helvetica Neue", "Futura", "Trebuchet MS", Arial;
   -webkit-user-select: none;
@@ -59,8 +59,8 @@ body {
   width: 0;
 }
 .sprite {
-  background-color: rgba(0, 0, 0, 0.1);
-  border: 3px solid rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0);
+  border: 3px solid rgba(255, 255, 255, 0.4);
   height: 40px;
   width: 100%;
 }
@@ -87,7 +87,7 @@ body {
 
 }
 .sprite-label {
-  font-size: 1.5em;
+  font-size: 1.0em;
   opacity: 0.8;
   font-weight: 300;
   color: #fff;
