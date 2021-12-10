@@ -86,7 +86,7 @@ var Sprite = function(options) {
 
   window.addEventListener("keydown", function(event) {
       event.preventDefault();
-      self.sound.stop();
+      self.sound.unload();
       const keyDown = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
     switch (keyDown) { // change to event.key to key to use the above variable
       case "Enter":

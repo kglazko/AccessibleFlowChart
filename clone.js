@@ -90,29 +90,43 @@ var Sprite = function(options) {
       leftTracker += 1;
       rightTracker -=1;
       console.log(window[selected_node + 'Array'][0]);
-      var id = self.play(window[selected_node + 'Array'][0]);
-      //self.sound.pos(-100 ,0,-0.5);
+      if (window[selected_node + 'Array'][0] === "clap") {
+        var id = self.play(window[selected_node + 'Array'][0]);
+      }
+      else {var id = self.play(window[selected_node + 'Array'][0]);
       selected_node = window[selected_node + 'Array'][0];
+      }
       break;
 
     case "ArrowRight":
       // Right pressed
       rightTracker += 1;
       leftTracker -= 1;
-      var id = self.play(window[selected_node + 'Array'][1]);
-      //self.sound.pos(100,0,-0.5, id);
+      if (window[selected_node + 'Array'][1] === "clap") {
+        var id = self.play(window[selected_node + 'Array'][1]);
+      }
+      else {var id = self.play(window[selected_node + 'Array'][1]);
       selected_node = window[selected_node + 'Array'][1];
+      }
       break;
 
     case "ArrowUp":
       // Up pressed
-      self.play(window[selected_node + 'Array'][2]);
+      if (window[selected_node + 'Array'][2] === "clap") {
+        var id = self.play(window[selected_node + 'Array'][2]);
+      }
+      else {var id = self.play(window[selected_node + 'Array'][2]);
       selected_node = window[selected_node + 'Array'][2];
+      }
       break;
     case "ArrowDown":
       // Down pressed
-      self.play(window[selected_node + 'Array'][3]);
+      if (window[selected_node + 'Array'][3] === "clap") {
+        var id = self.play(window[selected_node + 'Array'][3]);
+      }
+      else {var id = self.play(window[selected_node + 'Array'][3]);
       selected_node = window[selected_node + 'Array'][3];
+      }
       break;
   }
 }); 
