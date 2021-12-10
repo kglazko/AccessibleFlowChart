@@ -470,7 +470,7 @@ Sprite.prototype = {
 var sprite = new Sprite({
   //width: [100, 100, 100, 100, 100, 100],
   //left: [0, 342, 680, 1022, 1361],
-  src: ['tests/audio/study3.webm', 'tests/audio/study3.mp3'],
+  src: ['tests/audio/study2.webm', 'tests/audio/study2.mp3'],
   sprite: {
     //h1
     one: [0, 1200],
