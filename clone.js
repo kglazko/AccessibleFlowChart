@@ -130,8 +130,6 @@ var Sprite = function(options) {
   }
 }); 
 
-  self.resize();
-
   // Begin the progress step tick.
   requestAnimationFrame(self.step.bind(self));
 };
