@@ -11,27 +11,27 @@
 // Cache references to DOM elements.
 var house1Array = ['house1', 'house1', 'house1', 'room1'];
 
-var room1Array = ['house1', 'room2', 'house1', 'chair1'];
-var cabinet1Array = ['fan1', 'bed1', 'room1', 'clap'];
-var fan1Array = ['chair1', 'cabinet1', 'room1', 'clap'];
-var chair1Array = ['clap', 'fan1', 'room1', 'clap'];
-var bed1Array = ['cabinet1', 'bed2', 'room1', 'clap'];
-var bed2Array = ['bed1', 'clap', 'room1', 'clap'];
+var room1Array = ['room1', 'room2', 'house1', 'chair1'];
+var cabinet1Array = ['fan1', 'bed1', 'room1', 'room1'];
+var fan1Array = ['chair1', 'cabinet1', 'room1', 'room1'];
+var chair1Array = ['room1', 'fan1', 'room1', 'room1'];
+var bed1Array = ['cabinet1', 'bed2', 'room1', 'bed1'];
+var bed2Array = ['bed1', 'room1', 'room1', 'room1'];
 
 var room2Array = ['room1', 'room3', 'house1', 'chair2'];
-var chair2Array = ['clap', 'chair3', 'room2', 'clap'];
-var chair3Array = ['chair2', 'chair4', 'room2', 'clap'];
-var chair4Array = ['chair3', 'chair5', 'room2', 'clap'];
-var chair5Array = ['chair4', 'table1', 'room2', 'clap'];
-var table1Array = ['chair5', 'fan2', 'room2', 'clap'];
-var fan2Array = ['table1', 'clap', 'room2', 'clap'];
+var chair2Array = ['room2', 'chair3', 'room2', 'room2'];
+var chair3Array = ['chair2', 'chair4', 'room2', 'room2'];
+var chair4Array = ['chair3', 'chair5', 'room2', 'room2'];
+var chair5Array = ['chair4', 'table1', 'room2', 'room2'];
+var table1Array = ['chair5', 'fan2', 'room2', 'room2'];
+var fan2Array = ['table1', 'room2', 'room2', 'room2'];
 
 var room3Array = ['room2', 'room4', 'house1', 'tree1'];
-var tree1Array = ['clap', 'tree2', 'room3', 'clap'];
-var tree2Array = ['tree1', 'clap', 'room3', 'clap'];
+var tree1Array = ['room3', 'tree2', 'room3', 'room3'];
+var tree2Array = ['tree1', 'room3', 'room3', 'room3'];
 
-var room4Array = ['room3', 'clap', 'house1', 'chair6' ];
-var chair6Array = ['clap', 'clap', 'room4', 'clap'];
+var room4Array = ['room3', 'room1', 'house1', 'chair6' ];
+var chair6Array = ['room4', 'room4', 'room4', 'room4'];
 
 var selected_node = 'house1';
 var rightTracker = 1;
@@ -80,55 +80,39 @@ var Sprite = function(options) {
       self.sound.unload();
       const keyDown = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
     switch (keyDown) { // change to event.key to key to use the above variable
-      case "Enter":
-          var id = self.play(selected_node);
-          console.log("I read this");
-          break;
-
       case "ArrowLeft":
       // Left pressed
       leftTracker += 1;
       rightTracker -=1;
       console.log(window[selected_node + 'Array'][0]);
-      if (window[selected_node + 'Array'][0] === "clap") {
-        var id = self.sound.play("clap");
-      }
-      else {var id = self.play(window[selected_node + 'Array'][0]);
+      var id = self.play(window[selected_node + 'Array'][0]);
+      //self.sound.pos(-100 ,0,-0.5);
       selected_node = window[selected_node + 'Array'][0];
-      }
       break;
 
     case "ArrowRight":
       // Right pressed
       rightTracker += 1;
       leftTracker -= 1;
-      if (window[selected_node + 'Array'][1] === "clap") {
-        var id = self.sound.play("clap");
-      }
-      else {var id = self.play(window[selected_node + 'Array'][1]);
+      var id = self.play(window[selected_node + 'Array'][1]);
+      //self.sound.pos(100,0,-0.5, id);
       selected_node = window[selected_node + 'Array'][1];
-      }
       break;
 
     case "ArrowUp":
       // Up pressed
-      if (window[selected_node + 'Array'][2] === "clap") {
-        var id = self.sound.play("clap");      }
-      else {var id = self.play(window[selected_node + 'Array'][2]);
+      self.play(window[selected_node + 'Array'][2]);
       selected_node = window[selected_node + 'Array'][2];
-      }
       break;
     case "ArrowDown":
       // Down pressed
-      if (window[selected_node + 'Array'][3] === "clap") {
-        var id = self.sound.play("clap");
-      }
-      else {var id = self.play(window[selected_node + 'Array'][3]);
+      self.play(window[selected_node + 'Array'][3]);
       selected_node = window[selected_node + 'Array'][3];
-      }
       break;
   }
 }); 
+
+  self.resize();
 
   // Begin the progress step tick.
   requestAnimationFrame(self.step.bind(self));
@@ -272,10 +256,6 @@ Sprite.prototype = {
 
     else if (key.includes('house1')) {
       self.play2('low', key, 0.0);
-    }
-
-    else if (key.includes('clap')) {
-      console.log("nothing happens");
     }
     else {
       self.play2('high');
