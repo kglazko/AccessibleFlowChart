@@ -11,7 +11,7 @@
 // Cache references to DOM elements.
 var house1Array = ['house1', 'house1', 'house1', 'room1'];
 
-var room1Array = ['clap', 'room2', 'house1', 'chair1'];
+var room1Array = ['house1', 'room2', 'house1', 'chair1'];
 var cabinet1Array = ['fan1', 'bed1', 'room1', 'clap'];
 var fan1Array = ['chair1', 'cabinet1', 'room1', 'clap'];
 var chair1Array = ['clap', 'fan1', 'room1', 'clap'];
@@ -501,8 +501,7 @@ var sprite = new Sprite({
     cabinet: [8600,400],
     high: [9050, 200],
     medium: [9400, 200],
-    low: [9700, 300],
-    clap: [10000, 300]
+    low: [9700, 300]
 
   },
   spriteMap: {
@@ -573,6 +572,5 @@ var sprite = new Sprite({
     //Chimes
     high: 'high',
     medium: 'medium',
-    low: 'low',
-    clap: 'clap' }
+    low: 'low' }
 });
