@@ -254,7 +254,7 @@ Sprite.prototype = {
 
       else {
         var id = self.sound.play(sprite);
-        self.sound.stereo(1.0);
+        self.sound.stereo(0);
       }
     
 
