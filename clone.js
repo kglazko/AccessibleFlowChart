@@ -37,11 +37,7 @@ var selected_node = 'house1';
 var rightTracker = 1;
 var leftTracker = 1;
 
-var h1_rooms = 4;
-var r1_f = 5;
-var r2_f = 6;
-var r3_f = 2;
-var r4_f = 1;
+var playTones = true;
 
 var elms = ['waveform', 'sprite0', 'sprite1', 'sprite2', 'sprite3', 'sprite4', 'sprite5'];
 elms.forEach(function(elm) {
@@ -124,6 +120,15 @@ var Sprite = function(options) {
       }
       else {var id = self.play(window[selected_node + 'Array'][3]);
       selected_node = window[selected_node + 'Array'][3];
+      }
+      break;
+    case "Shift":
+      if (playTones) {
+        playTones = false;
+      }
+
+      else {
+        playTones = true;
       }
       break;
   }
@@ -254,6 +259,7 @@ Sprite.prototype = {
     
 
     self.sound.once('end', function() {
+      if (playTones) {
     if(key.includes('room1')){
       self.play2('medium', key, -1.0);
     }
@@ -281,7 +287,8 @@ Sprite.prototype = {
     else {
       self.play2('high');
     }
-    });
+    }
+  });
 
     // Create a progress element and begin visually tracking it.
     var elm = document.createElement('div');
