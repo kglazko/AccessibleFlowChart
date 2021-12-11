@@ -269,10 +269,16 @@ Sprite.prototype = {
         self.sound.stereo(0.85);
       }
 
-      else {
+      else if (key.includes('tree2')){
         self.sound.volume(0.05);
         var id = self.sound.play(sprite);
         self.sound.stereo(0);
+      }
+
+      else if (key.includes('chair')){
+        self.sound.volume(0.8);
+        var id = self.sound.play(sprite);
+        self.sound.stereo(1);
       }
     
 
