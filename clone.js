@@ -305,7 +305,7 @@ Sprite.prototype = {
     else if (key.includes('chair6')){
       self.play2('high', key, 1.0, 0.8);
     }
-    else if (key.includes('house1')){
+    else(){
       self.play2('high', key, 0.0, 0.05);
     }
     }
