@@ -77,7 +77,7 @@ var Sprite = function(options) {
 
   window.addEventListener("keydown", function(event) {
       event.preventDefault();
-      self.sound.unload();
+      getAudioContext().resume();
       const keyDown = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
     switch (keyDown) { // change to event.key to key to use the above variable
       case "ArrowLeft":
