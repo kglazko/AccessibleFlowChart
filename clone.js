@@ -306,7 +306,7 @@ Sprite.prototype = {
       self.play2('high', key, 1.0, 0.8);
     }
     else(){
-      self.play2('high', key, 0, 0.1);
+      self.play2('high', key, 0, 0.05);
     }
     }
   });
@@ -329,7 +329,7 @@ Sprite.prototype = {
     }, id);
   },
 
-  play2: function(key, parent, stereo, volume = 0.8) {
+  play2: function(key, parent, stereo = 0, volume = 0.8) {
     self = this;
     var sprite = self._spriteMap[key];
     self.sound.volume(volume);
