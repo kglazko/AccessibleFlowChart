@@ -5,6 +5,7 @@
 * Be sure to disable screenreaders before interacting with the demo (we have our own audio source that will be used for navigating the graph).
 * In the spatial audio demo, pressing 'Enter' allows you to play the information of a current node. 
 * In the spatial audio demo, pressing 'Shift' allows you to disable tone summaries played after the name of the element, and also to re-enable it.
+* Please exercise patience when interacting with the graph, or you may experience overlapping audio (a to-do to resolve for the future)
 
 # References
 * HowlerJS examples and documentation were used for the creation of this demo, including the Sprite and 3D audio examples.
