@@ -269,7 +269,7 @@ Sprite.prototype = {
         self.sound.stereo(0.85);
       }
 
-      else if (key.includes('tree2')){
+      else if (key.includes('house1')){
         self.sound.volume(0.05);
         var id = self.sound.play(sprite);
         self.sound.stereo(0);
