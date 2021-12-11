@@ -270,9 +270,9 @@ Sprite.prototype = {
       }
 
       else {
-        self.sound.volume(1);
+        self.sound.volume(0.05);
         var id = self.sound.play(sprite);
-        self.sound.stereo(1);
+        self.sound.stereo(0);
       }
     
 
@@ -302,7 +302,7 @@ Sprite.prototype = {
     else if (key.includes('clap')) {
       console.log("nothing happens");
     }
-    else {
+    else if (key.includes('chair6')){
       self.play2('high', key, 1.0, 0.8);
     }
     }
