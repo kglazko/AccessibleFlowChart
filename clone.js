@@ -166,25 +166,29 @@ Sprite.prototype = {
     // Play the sprite sound and capture the ID.
     if (key.includes('room1')){
       var id = self.sound.play(sprite);
-      self.sound.stereo(-1.0 );
+      self.sound.stereo(-1.0);
+      self.sound.volume(0.8);
     }
 
     else if (key.includes('room2')){
       var id = self.sound.play(sprite);
       //self.sound.pos(-0.5 ,0,-1.0, id);
       self.sound.stereo(-0.5);
+      self.sound.volume(0.8);
     }
 
     else if (key.includes('room3')){
       var id = self.sound.play(sprite);
       //self.sound.pos(0.5 ,0,-1.0, id);
       self.sound.stereo(0.5);
+      self.sound.volume(0.8);
     }
 
     else if (key.includes('room4')){
       var id = self.sound.play(sprite);
       //self.sound.pos(1.0 ,0,-1.0, id);
       self.sound.stereo(1.0);
+      self.sound.volume(0.8);
     }
 
       else if (key.includes('chair1')){
@@ -255,6 +259,7 @@ Sprite.prototype = {
       else {
         var id = self.sound.play(sprite);
         self.sound.stereo(0);
+        self.sound.volume(0.6);
       }
     
 
@@ -317,18 +322,23 @@ Sprite.prototype = {
       if(parent === 'room1') {
         self.sound.play('high');
         self.sound.stereo(-1.0);
+        self.sound.volume(0.6);
         self.sound.once('end', function(){
           self.sound.play('high');
           self.sound.stereo(-0.85);
+          self.sound.volume(0.6);
           self.sound.once('end', function(){
             self.sound.play('high');
             self.sound.stereo(-0.7);
+            self.sound.volume(0.6);
             self.sound.once('end', function(){
               self.sound.play('high');
               self.sound.stereo(-0.55);
+              self.sound.volume(0.6);
               self.sound.once('end', function(){
                 self.sound.play('high');
                 self.sound.stereo(-0.4);
+                self.sound.volume(0.6);
               });
             });
           });
@@ -337,21 +347,27 @@ Sprite.prototype = {
       else if (parent === 'room2') {
         self.sound.play('high');
         self.sound.stereo(-0.25);
+        self.sound.volume(0.6);
         self.sound.once('end', function(){
           self.sound.play('high');
           self.sound.stereo(-0.1);
+          self.sound.volume(0.6);
           self.sound.once('end', function(){
             self.sound.play('high');
             self.sound.stereo(0.1);
+            self.sound.volume(0.6);
             self.sound.once('end', function(){
               self.sound.play('high');
               self.sound.stereo(0.25);
+              self.sound.volume(0.6);
               self.sound.once('end', function(){
                 self.sound.play('high');
                 self.sound.stereo(0.5);
+                self.sound.volume(0.6);
                 self.sound.once('end', function(){
                   self.sound.play('high');
                   self.sound.stereo(0.55);
+                  self.sound.volume(0.6);
                 });
               });
             });
@@ -362,74 +378,95 @@ Sprite.prototype = {
       else if (parent === 'room3') {
         self.sound.play('high');
         self.sound.stereo(0.7);
+        self.sound.volume(0.6);
         self.sound.once('end', function(){
           self.sound.play('high');
           self.sound.stereo(0.85);
+          self.sound.volume(0.6);
         });
       }
 
       else if (parent === 'room4') {
         self.sound.play('high');
         self.sound.stereo(1.0);
+        self.sound.volume(0.6);
       }
 
       else if (parent === 'house1') {
         // Room 1
         self.sound.play('medium');
         self.sound.stereo(-1);
+        self.sound.volume(0.8);
         self.sound.once('end', function(){
           self.sound.play('high');
           self.sound.stereo(-1);
+          self.sound.volume(0.6);
           self.sound.once('end', function(){
             self.sound.play('high');
             self.sound.stereo(-0.85);
+            self.sound.volume(0.6);
             self.sound.once('end', function(){
               self.sound.play('high');
               self.sound.stereo(-0.7);
+              self.sound.volume(0.6);
               self.sound.once('end', function(){
                 self.sound.play('high');
                 self.sound.stereo(-0.55);
+                self.sound.volume(0.6);
                 self.sound.once('end', function(){
                   self.sound.play('high');
                   self.sound.stereo(-0.4);
+                  self.sound.volume(0.6);
                   // Room 2
         self.sound.once('end', function(){
           self.sound.play('medium');
           self.sound.stereo(-0.5);
+          self.sound.volume(0.8);
           self.sound.once('end', function(){
             self.sound.play('high');
             self.sound.stereo(-0.25);
+            self.sound.volume(0.6);
             self.sound.once('end', function(){
               self.sound.play('high');
               self.sound.stereo(-0.1);
+              self.sound.volume(0.6);
               self.sound.once('end', function(){
                 self.sound.play('high');
                 self.sound.stereo(0.1);
+                self.sound.volume(0.6);
                 self.sound.once('end', function(){
                   self.sound.play('high');
                   self.sound.stereo(0.25);
+                  self.sound.volume(0.6);
                   self.sound.once('end', function(){
                   self.sound.play('high');
                   self.sound.stereo(0.4);
+                  self.sound.volume(0.6);
                   self.sound.once('end', function(){
                     self.sound.play('high');
                     self.sound.stereo(0.55);
+                    self.sound.volume(0.6);
                     //Room 3
                     self.sound.once('end', function() {
                     self.sound.play('medium');
                     self.sound.stereo(0.5);
+                    self.sound.volume(0.8);
                     self.sound.once('end', function(){
                     self.sound.play('high');
                     self.sound.stereo(0.7);
+                    self.sound.volume(0.6);
                     self.sound.once('end', function(){
                     self.sound.play('high');
                     self.sound.stereo(0.85);
+                    self.sound.volume(0.6);
                     self.sound.once('end', function(){
                     // Room 4
                     self.sound.play('medium');
                     self.sound.stereo(1);
+                    self.sound.volume(0.8);
                     self.sound.once('end', function(){
                     self.sound.play('high');
+                    self.sound.volume(0.6);
                     self.sound.stereo(1);
                     });
                     });
