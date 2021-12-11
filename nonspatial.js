@@ -9,31 +9,31 @@
  */
 
 // Cache references to DOM elements.
-var house2Array = ['house2', 'house2', 'house2', 'room21'];
+var house2Array = ['clap', 'clap', 'clap', 'room21'];
 
-var room21Array = ['room21', 'room22', 'house2', 'couch'];
-var couchArray = ['couch', 'lamp1_5', 'room21', 'couch'];
-var lamp1_5Array = ['couch', 'lamp1_5', 'room21', 'lamp1_5'];
+var room21Array = ['clap', 'room22', 'house2', 'couch'];
+var couchArray = ['clap', 'lamp1_5', 'room21', 'clap'];
+var lamp1_5Array = ['couch', 'clap', 'room21', 'clap'];
 
 var room22Array = ['room21', 'room23', 'house2', 'chair1_1'];
-var chair1_1Array = ['chair1_1', 'chair1_2', 'room22', 'chair1_1'];
-var chair1_2Array = ['chair1_1', 'chair1_3', 'room22', 'chair1_2'];
-var chair1_3Array = ['chair1_2', 'chair1_4', 'room22', 'chair1_3'];
-var chair1_4Array = ['chair1_3', 'table1_1', 'room22', 'chair1_4'];
-var table1_1Array = ['chair1_4', 'lamp1_1', 'room22', 'table1_1'];
-var lamp1_1Array = ['table1_1', 'lamp1_1', 'room22', 'lamp1_1'];
+var chair1_1Array = ['clap', 'chair1_2', 'room22', 'clap'];
+var chair1_2Array = ['chair1_1', 'chair1_3', 'room22', 'clap'];
+var chair1_3Array = ['chair1_2', 'chair1_4', 'room22', 'clap'];
+var chair1_4Array = ['chair1_3', 'table1_1', 'room22', 'clap'];
+var table1_1Array = ['chair1_4', 'lamp1_1', 'room22', 'clap'];
+var lamp1_1Array = ['table1_1', 'clap', 'room22', 'clap'];
 
 var room23Array = ['room22', 'room24', 'house2', 'bed1_1'];
-var bed1_1Array = ['bed1_1', 'lamp1_2', 'room23', 'bed1_1'];
-var lamp1_2Array = ['bed1_1', 'lamp1_2', 'room23', 'lamp1_2'];
+var bed1_1Array = ['clap', 'lamp1_2', 'room23', 'clap'];
+var lamp1_2Array = ['bed1_1', 'clap', 'room23', 'clap'];
 
 var room24Array = ['room23', 'room25', 'house2', 'lamp1_3' ];
-var lamp1_3Array = ['lamp1_3', 'table1_2', 'room24', 'lamp1_3'];
-var table1_2Array = ['lamp1_3', 'lamp1_4', 'room24', 'lamp1_3'];
-var lamp1_4Array = ['lamp1_3', 'lamp1_4', 'room24', 'lamp1_4'];
+var lamp1_3Array = ['clap', 'table1_2', 'room24', 'clap'];
+var table1_2Array = ['lamp1_3', 'lamp1_4', 'room24', 'clap'];
+var lamp1_4Array = ['lamp1_3', 'clap', 'room24', 'clap'];
 
-var room25Array = ['room24', 'room25', 'house2', 'table1_3' ];
-var table1_3Array = ['table1_3', 'table1_3', 'room25', 'table1_3'];
+var room25Array = ['room24', 'clap', 'house2', 'table1_3' ];
+var table1_3Array = ['clap', 'clap', 'room25', 'clap'];
 
 var selected_node = 'house2';
 var rightTracker = 1;
@@ -86,17 +86,26 @@ var Sprite = function(options) {
 
   window.addEventListener("keydown", function(event) {
       event.preventDefault();
-      self.sound.stop();
-      const keyDown = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
+    const keyDown = event.key; // "ArrowRight", "ArrowLeft", "ArrowUp", or "ArrowDown"
     switch (keyDown) { // change to event.key to key to use the above variable
+      case "Enter":
+        var id = self.play(selected_node);
+        console.log("I read this");
+        break;
+          
       case "ArrowLeft":
       // Left pressed
       leftTracker += 1;
       rightTracker -=1;
       console.log(window[selected_node + 'Array'][0]);
-      var id = self.play(window[selected_node + 'Array'][0]);
+      if (window[selected_node + 'Array'][0] === "clap") {
+        var id = self.play(window[selected_node + 'Array'][0]);
+        break;
+      }
+      else {var id = self.play(window[selected_node + 'Array'][0]);
       selected_node = window[selected_node + 'Array'][0];
       break;
+      }
 
     case "ArrowRight":
       // Right pressed
@@ -211,7 +220,7 @@ Sprite.prototype = {
 var sprite = new Sprite({
   //width: [100, 100, 100, 100, 100, 100],
   //left: [0, 342, 680, 1022, 1361],
-  src: ['tests/audio/study2.webm', 'tests/audio/study2.mp3'],
+  src: ['tests/audio/study3_2.webm', 'tests/audio/study3_2.mp3'],
   sprite: {
     //h1
     one: [0, 1200],
@@ -242,7 +251,8 @@ var sprite = new Sprite({
     cabinet: [8600,400],
     high: [9050, 200],
     medium: [9400, 200],
-    low: [9700, 300]
+    low: [9700, 300],
+    clap: [10000,300]
 
   },
   spriteMap: {
@@ -276,5 +286,6 @@ var sprite = new Sprite({
     lamp1_5: 'lamp',
 
     //Couch in House 2
-    couch: 'couch' }
+    couch: 'couch',
+    clap: 'clap' }
 });
