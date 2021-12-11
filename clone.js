@@ -303,7 +303,7 @@ Sprite.prototype = {
       console.log("nothing happens");
     }
     else {
-      self.play2('high');
+      self.play2('high', key, 1.0, 0.8);
     }
     }
   });
