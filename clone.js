@@ -306,7 +306,7 @@ Sprite.prototype = {
       self.play2('high', key, 1.0, 0.8);
     }
     else(){
-      self.play2('high', key, 0, 0.05);
+      self.play2('high', key, 0.0, 0.05);
     }
     }
   });
